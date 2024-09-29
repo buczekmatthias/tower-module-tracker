@@ -31,6 +31,9 @@ onBeforeMount(() => {
   if (!localStorage.getItem("stats")) {
     loadStatistics();
     stats.value = JSON.parse(localStorage.getItem("stats"));
+    gems.value = stats.value["gems_spent"];
+    commons.value = stats.value["mods"]["common"];
+    rares.value = stats.value["mods"]["rare"];
   }
 });
 
