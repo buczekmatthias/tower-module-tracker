@@ -1,6 +1,7 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import VueLazyLoad from "vue-lazyload";
 
-createApp(App).mount('#app')
+createApp(App).use(VueLazyLoad).mount("#app");

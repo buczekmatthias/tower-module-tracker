@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 body {
-	@apply bg-slate-900 text-slate-50;
+  @apply bg-theme text-font;
 }
 
 #app {
-	@apply flex flex-col min-h-screen;
+  @apply flex flex-col min-h-screen p-container max-w-4xl mx-auto;
+}
+
+input {
+  @apply bg-theme text-font border border-solid border-container py-1.5 px-2.5 rounded-lg !outline-none ring-0;
 }
