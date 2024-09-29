@@ -7,9 +7,9 @@ body {
 }
 
 #app {
-  @apply flex flex-col min-h-screen p-container max-w-4xl mx-auto;
+  @apply grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-x-6 min-h-screen p-container max-w-5xl mx-auto;
 }
 
 input {
-  @apply bg-theme text-font border border-solid border-container py-1.5 px-2.5 rounded-lg !outline-none ring-0;
+  @apply bg-theme text-font border border-solid border-container py-1.5 px-2.5 rounded-lg !outline-none ring-0  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
 }

@@ -2,9 +2,7 @@
   <Statistics :stats="stats" />
   <Modules
     v-model:modules="modules"
-    v-model:gems="gems"
-    v-model:commons="commons"
-    v-model:rares="rares"
+    @statsUpdate="updateStats"
   />
 </template>
 
@@ -19,10 +17,6 @@ import { loadStatistics } from "./data/statistics";
 const modules = ref(JSON.parse(localStorage.getItem("modules")));
 const stats = ref(JSON.parse(localStorage.getItem("stats")));
 
-const gems = ref(0);
-const commons = ref(0);
-const rares = ref(0);
-
 onBeforeMount(() => {
   if (!localStorage.getItem("modules")) {
     loadModules();
@@ -32,24 +26,28 @@ onBeforeMount(() => {
     loadStatistics();
     stats.value = JSON.parse(localStorage.getItem("stats"));
   }
-  gems.value = stats.value["gems_spent"];
-  commons.value = stats.value["mods"]["common"];
-  rares.value = stats.value["mods"]["rare"];
 });
 
-const updateStats = () => {
+const updateStats = (gems = 0, commons = 0, rares = 0, isAddAction = true) => {
   const s = {
-    gems_spent: 0,
+    gems_spent: stats.value.gems_spent,
     mods: {
-      common: 0,
-      rare: 0,
+      common: stats.value.mods.common,
+      rare: stats.value.mods.rare,
       epic: 0,
     },
   };
 
-  s["gems_spent"] = gems.value;
-  s["mods"]["common"] = commons.value;
-  s["mods"]["rare"] = rares.value;
+  if (isAddAction) {
+    s["gems_spent"] += gems;
+    s["mods"]["common"] += commons;
+    s["mods"]["rare"] += rares;
+  } else {
+    s["gems_spent"] = s["gems_spent"] - gems > 0 ? s["gems_spent"] - gems : 0;
+    s["mods"]["common"] = s["mods"]["common"] - commons > 0 ? s["mods"]["common"] - commons : 0;
+    s["mods"]["rare"] = s["mods"]["rare"] - rares > 0 ? s["mods"]["rare"] - rares : 0;
+  }
+
   s["mods"]["epic"] = Object.values(modules.value).reduce((a, b) => a + b, 0);
 
   localStorage.setItem("stats", JSON.stringify(s));
@@ -64,8 +62,4 @@ watch(
   },
   { deep: true }
 );
-
-watch([gems, commons, rares], () => {
-  updateStats();
-});
 </script>
