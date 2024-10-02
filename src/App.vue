@@ -1,4 +1,8 @@
 <template>
+  <Simulator
+    :stats="stats"
+    @statsUpdate="updateStats"
+  />
   <Statistics :stats="stats" />
   <Modules
     v-model:modules="modules"
@@ -7,6 +11,7 @@
 </template>
 
 <script setup>
+import Simulator from "./components/Simulator.vue";
 import Statistics from "./components/Statistics.vue";
 import Modules from "./components/Modules.vue";
 
@@ -28,7 +33,7 @@ onBeforeMount(() => {
   }
 });
 
-const updateStats = (gems = 0, commons = 0, rares = 0, isAddAction = true) => {
+const updateStats = (gems = 0, commons = 0, rares = 0, isAddAction = true, isSimulator = false) => {
   const s = {
     gems_spent: stats.value.gems_spent,
     mods: {
@@ -38,7 +43,11 @@ const updateStats = (gems = 0, commons = 0, rares = 0, isAddAction = true) => {
     },
   };
 
-  if (isAddAction) {
+  if (isSimulator) {
+    s["gems_spent"] = gems;
+    s["mods"]["common"] = commons;
+    s["mods"]["rare"] = rares;
+  } else if (isAddAction) {
     s["gems_spent"] += gems;
     s["mods"]["common"] += commons;
     s["mods"]["rare"] += rares;
