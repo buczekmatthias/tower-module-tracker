@@ -1,13 +1,15 @@
 <template>
-  <Simulator
-    :stats="stats"
-    @statsUpdate="updateStats"
-  />
-  <Statistics :stats="stats" />
-  <Modules
-    v-model:modules="modules"
-    @statsUpdate="updateStats"
-  />
+  <div class="flex flex-col lg:sticky lg:top-4">
+    <Simulator
+      :stats="stats"
+      @statsUpdate="updateStats"
+    />
+    <Statistics
+      :stats="stats"
+      @statsUpdate="updateStats"
+    />
+  </div>
+  <Modules v-model:modules="modules" />
 </template>
 
 <script setup>

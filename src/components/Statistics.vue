@@ -18,16 +18,126 @@
       </tr>
     </tbody>
   </table>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <label
+        for="gems_spent"
+        class="flex flex-col gap-2"
+      >
+        Gems spent
+      </label>
+      <div class="grid grid-cols-[auto_1fr_auto]">
+        <button
+          class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
+          @click="
+            $emit('statsUpdate', gems, 0, 0, false);
+            gems = 0;
+          "
+        >
+          Sub
+        </button>
+        <input
+          class="rounded-none"
+          id="gems_spent"
+          type="number"
+          v-model="gems"
+        />
+        <button
+          class="px-4 rounded-r-lg bg-emerald-600 hover:bg-emerald-500"
+          @click="
+            $emit('statsUpdate', gems, 0, 0);
+            gems = 0;
+          "
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label
+        for="commons"
+        class="flex flex-col gap-2"
+      >
+        Common mods
+      </label>
+      <div class="grid grid-cols-[auto_1fr_auto]">
+        <button
+          class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
+          @click="
+            $emit('statsUpdate', 0, commons, 0, false);
+            commons = 0;
+          "
+        >
+          Sub
+        </button>
+        <input
+          class="rounded-none"
+          id="commons"
+          type="number"
+          v-model="commons"
+        />
+        <button
+          class="px-4 rounded-r-lg bg-emerald-600 hover:bg-emerald-500"
+          @click="
+            $emit('statsUpdate', 0, commons, 0);
+            commons = 0;
+          "
+        >
+          Add
+        </button>
+      </div>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label
+        for="rares"
+        class="flex flex-col gap-2"
+      >
+        Rare mods
+      </label>
+      <div class="grid grid-cols-[auto_1fr_auto]">
+        <button
+          class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
+          @click="
+            $emit('statsUpdate', 0, 0, rares, false);
+            rares = 0;
+          "
+        >
+          Sub
+        </button>
+        <input
+          class="rounded-none"
+          id="rares"
+          type="number"
+          v-model="rares"
+        />
+        <button
+          class="px-4 rounded-r-lg bg-emerald-600 hover:bg-emerald-500"
+          @click="
+            $emit('statsUpdate', 0, 0, rares);
+            rares = 0;
+          "
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 
 const props = defineProps({
   stats: Object,
 });
 
+const gems = ref(0);
+const commons = ref(0);
+const rares = ref(0);
+
 const sum = computed(() => Object.values(props.stats.mods).reduce((a, b) => a + b, 0));
+
+const emit = defineEmits(["statsUpdate"]);
 </script>
 
 <style lang="postcss" scoped>

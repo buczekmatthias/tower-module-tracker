@@ -7,7 +7,7 @@ body {
 }
 
 #app {
-  @apply grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-x-6 min-h-screen p-container max-w-5xl mx-auto;
+  @apply grid grid-cols-1 lg:items-start lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-x-12 min-h-screen p-container max-w-lg lg:max-w-5xl mx-auto;
 }
 
 input {
