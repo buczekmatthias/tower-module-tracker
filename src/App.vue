@@ -1,5 +1,18 @@
 <template>
-  <div class="flex flex-col lg:sticky lg:top-4">
+  <div class="flex flex-col gap-6 lg:sticky lg:top-4">
+    <button
+      @click="showImportExport = !showImportExport"
+      class="bg-rose-700 p-2 rounded-lg hover:bg-rose-600"
+    >
+      Toggle import/export
+    </button>
+    <div
+      class="flex flex-col gap-2"
+      v-if="showImportExport"
+    >
+      <Export />
+      <Import />
+    </div>
     <Simulator
       :stats="stats"
       @statsUpdate="updateStats"
@@ -16,6 +29,8 @@
 import Simulator from "./components/Simulator.vue";
 import Statistics from "./components/Statistics.vue";
 import Modules from "./components/Modules.vue";
+import Export from "./components/Export.vue";
+import Import from "./components/Import.vue";
 
 import { onBeforeMount, ref, watch } from "vue";
 import { loadModules } from "./data/modules";
@@ -23,6 +38,8 @@ import { loadStatistics } from "./data/statistics";
 
 const modules = ref(JSON.parse(localStorage.getItem("modules")));
 const stats = ref(JSON.parse(localStorage.getItem("stats")));
+
+const showImportExport = ref(false);
 
 onBeforeMount(() => {
   if (!localStorage.getItem("modules")) {

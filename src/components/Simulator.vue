@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-6 border border-solid border-container rounded-lg p-3 flex flex-col gap-2">
+  <div class="border border-solid border-container rounded-lg p-3 flex flex-col gap-2">
     <p class="font-semibold text-xl">Simulator</p>
     <p class="text-font/50 text-sm">Simulator bases on gems spent, epics pulled and chances to pull rarity of mod. <span class="font-bold">It's result is pure guess.</span></p>
     <div class="grid grid-cols-2 gap-2 mt-2">

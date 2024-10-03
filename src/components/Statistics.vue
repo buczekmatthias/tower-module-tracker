@@ -1,5 +1,5 @@
 <template>
-  <table class="border-collapse mb-6">
+  <table class="border-collapse">
     <tbody>
       <tr>
         <td class="first-letter:uppercase stats-table w-2/5 md:w-1/3">gems spent</td>
