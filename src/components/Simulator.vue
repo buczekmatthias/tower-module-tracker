@@ -1,7 +1,7 @@
 <template>
   <div class="border border-solid border-container rounded-lg p-3 flex flex-col gap-2">
     <p class="font-semibold text-xl">Simulator</p>
-    <p class="text-font/50 text-sm">Simulator bases on gems spent, epics pulled and chances to pull rarity of mod. <span class="font-bold">It's result is pure guess.</span></p>
+    <p class="text-zinc-50/50 text-sm">Simulator bases on gems spent, epics pulled and chances to pull rarity of mod. <span class="font-bold">It's result is pure guess.</span></p>
     <div class="grid grid-cols-2 gap-2 mt-2">
       <button
         class="bg-rose-700 hover:bg-rose-600 rounded-lg p-2"

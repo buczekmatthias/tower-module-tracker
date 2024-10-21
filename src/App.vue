@@ -1,45 +1,48 @@
 <template>
-  <div class="flex flex-col gap-6 lg:sticky lg:top-4">
-    <button
-      @click="showImportExport = !showImportExport"
-      class="bg-rose-700 p-2 rounded-lg hover:bg-rose-600"
-    >
-      Toggle import/export
-    </button>
-    <div
-      class="flex flex-col gap-2"
-      v-if="showImportExport"
-    >
-      <Export />
-      <Import />
+  <Navigation v-model="page" />
+  <div
+    class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-6"
+    v-if="page === 'tracker'"
+  >
+    <div class="flex flex-col gap-6 lg:sticky lg:top-4 max-sm:px-container">
+      <Simulator
+        :stats="stats"
+        @statsUpdate="updateStats"
+      />
+      <Statistics
+        :stats="stats"
+        @statsUpdate="updateStats"
+      />
     </div>
-    <Simulator
-      :stats="stats"
-      @statsUpdate="updateStats"
-    />
-    <Statistics
-      :stats="stats"
-      @statsUpdate="updateStats"
-    />
+    <Modules v-model:modules="modules" />
   </div>
-  <Modules v-model:modules="modules" />
+  <div
+    class="flex flex-col gap-2 max-sm:px-container"
+    v-else
+  >
+    <Export />
+    <Import />
+  </div>
+  <Footer />
 </template>
 
 <script setup>
+import Navigation from "./components/Navigation.vue";
 import Simulator from "./components/Simulator.vue";
 import Statistics from "./components/Statistics.vue";
 import Modules from "./components/Modules.vue";
 import Export from "./components/Export.vue";
 import Import from "./components/Import.vue";
+import Footer from "./components/Footer.vue";
 
 import { onBeforeMount, ref, watch } from "vue";
 import { loadModules } from "./data/modules";
 import { loadStatistics } from "./data/statistics";
 
+const page = ref("tracker");
+
 const modules = ref(JSON.parse(localStorage.getItem("modules")));
 const stats = ref(JSON.parse(localStorage.getItem("stats")));
-
-const showImportExport = ref(false);
 
 onBeforeMount(() => {
   if (!localStorage.getItem("modules")) {

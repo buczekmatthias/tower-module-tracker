@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-6">
+  <div class="flex flex-col gap-6 max-sm:px-container">
     <div
       class="flex flex-col gap-4 mods"
       v-for="(group_mods, group) in mods"

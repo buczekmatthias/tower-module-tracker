@@ -19,13 +19,8 @@
     </tbody>
   </table>
   <div class="flex flex-col gap-4">
-    <div class="flex flex-col gap-2">
-      <label
-        for="gems_spent"
-        class="flex flex-col gap-2"
-      >
-        Gems spent
-      </label>
+    <div class="grid grid-cols-[1fr_2fr] gap-4">
+      <label for="gems_spent">Gems spent</label>
       <div class="grid grid-cols-[auto_1fr_auto]">
         <button
           class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
@@ -34,7 +29,7 @@
             gems = 0;
           "
         >
-          Sub
+          -
         </button>
         <input
           class="rounded-none"
@@ -49,17 +44,12 @@
             gems = 0;
           "
         >
-          Add
+          +
         </button>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
-      <label
-        for="commons"
-        class="flex flex-col gap-2"
-      >
-        Common mods
-      </label>
+    <div class="grid grid-cols-[1fr_2fr] gap-4">
+      <label for="commons">Common mods</label>
       <div class="grid grid-cols-[auto_1fr_auto]">
         <button
           class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
@@ -68,7 +58,7 @@
             commons = 0;
           "
         >
-          Sub
+          -
         </button>
         <input
           class="rounded-none"
@@ -83,17 +73,12 @@
             commons = 0;
           "
         >
-          Add
+          +
         </button>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
-      <label
-        for="rares"
-        class="flex flex-col gap-2"
-      >
-        Rare mods
-      </label>
+    <div class="grid grid-cols-[1fr_2fr] gap-4">
+      <label for="rares">Rare mods</label>
       <div class="grid grid-cols-[auto_1fr_auto]">
         <button
           class="px-4 rounded-l-lg bg-red-600 hover:bg-red-500"
@@ -102,7 +87,7 @@
             rares = 0;
           "
         >
-          Sub
+          -
         </button>
         <input
           class="rounded-none"
@@ -117,7 +102,7 @@
             rares = 0;
           "
         >
-          Add
+          +
         </button>
       </div>
     </div>

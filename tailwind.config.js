@@ -4,19 +4,16 @@ export default {
   theme: {
     extend: {
       backgroundColor: {
-        theme: "#111111",
+        theme: "#1c1c1c",
       },
       borderColor: {
-        container: "#343434",
+        container: "#3d3d3d",
       },
       minHeight: {
         screen: ["100vh", "100dvh"],
       },
       padding: {
         container: "1rem",
-      },
-      textColor: {
-        font: "#fafafa",
       },
     },
   },

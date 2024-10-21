@@ -3,13 +3,25 @@
 @tailwind utilities;
 
 body {
-  @apply bg-theme text-font;
+  @apply bg-theme text-zinc-50;
 }
 
 #app {
-  @apply grid grid-cols-1 lg:items-start lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-x-12 min-h-screen p-container max-w-lg lg:max-w-5xl mx-auto;
+  @apply flex flex-col gap-4 min-h-screen max-w-lg lg:max-w-5xl mx-auto;
 }
 
 input {
-  @apply bg-theme text-font border border-solid border-container py-1.5 px-2.5 rounded-lg !outline-none ring-0  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+  @apply bg-theme text-zinc-50 border border-solid border-container py-1.5 px-2.5 rounded-lg !outline-none ring-0  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+}
+
+@layer components {
+  .nav-btn {
+    @apply capitalize p-container border-b-2 border-solid border-b-container;
+  }
+  .nav-btn.active {
+    @apply border-b-emerald-600;
+  }
+  .link {
+    @apply hover:underline underline-offset-4 text-sky-400;
+  }
 }
