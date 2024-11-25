@@ -37,10 +37,6 @@ const tools = [
   {
     name: "Lab speed-up calculator",
     href: "https://tower-lab-speedup-calc.vercel.app/",
-  },
-  {
-    name: "Lab planner",
-    href: "https://tower-lab-planner.vercel.app/",
-  },
+  }
 ];
 </script>
