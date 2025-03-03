@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+html:has(#modal) {
+  max-height: 100vh;
+  max-height: 100dvh;
+  overflow-y: hidden;
+}
+
+body {
+  background-color: #131313;
+  @apply text-slate-50;
+}
+
+#app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  @apply flex flex-col justify-center items-center p-3 gap-5;
+}
+
+#app * {
+  line-height: 175%;
+}
+
+@layer base {
+  input {
+    @apply !ring-0 !outline-none;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    appearance: textfield !important;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@theme {
+  --color-module-common: #aeaeae;
+  --color-module-rare: #1c7cdc;
+  --color-module-epic: #f17dee;
+  --color-module-legendary: #eb9143;
+  --color-module-mythic: #fc3e45;
+  --color-module-ancestral: #41fd69;
+  --color-nav: #1a1a1a;
+  --color-theme: #131313;
+}
+
+.p-container {
+  padding: 0.75rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.stats-table {
+  @apply border border-slate-300/20 p-3;
+}

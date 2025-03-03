@@ -1,0 +1,20 @@
+<template>
+  <div
+    class="order-last border border-solid border-slate-300/15 sticky bottom-4 z-30 grid grid-cols-3 gap-6 bg-nav rounded-md px-6"
+    id="navigation"
+  >
+    <button
+      v-for="tab in ['modules', 'bonuses', 'transfer']"
+      :key="tab"
+      class="cursor-pointer p-4 border-t-2 border-solid duration-150 capitalize"
+      :class="activeTab === tab ? 'border-t-emerald-600 text-emerald-600' : 'border-t-transparent text-slate-50/20 hover:text-slate-50/40'"
+      @click="activeTab = tab"
+    >
+      {{ tab }}
+    </button>
+  </div>
+</template>
+
+<script setup>
+const activeTab = defineModel();
+</script>
