@@ -22,7 +22,7 @@
       :ownership="ownership"
       :icon="module.icon"
       :group="group"
-      class="h-24 w-24"
+      class="scale-150 mb-4"
     />
 
     <p class="text-2xl font-semibold">{{ module.name }}</p>
