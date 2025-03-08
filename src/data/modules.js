@@ -15,7 +15,7 @@ const modules = {
   },
   generators: {
     "Singularity Harness": { icon: "singularity_harness.webp", description: "Increases the range of each bot by +:valm. Enemies hit by flame bot receive double damage", values: [5, 8, 11, 15] },
-    "Galaxy Compressor": { icon: "galaxy_compressor.webp", description: "Collecting a recovery package reduces the cooldown of all ultimate weapons by :vals", values: [10, 13, 17, 20] },
+    "Galaxy Compressor": { icon: "galaxy_compressor.webp", description: "Collecting a recovery package reduces the cooldown of all ultimate weapons except poison swamp by :vals", values: [10, 13, 17, 20] },
     "Pulsar Harvester": { icon: "pulsar_harvester.webp", description: "Each time a projectile hits an enemy, there's a :val% chance that it will reduce enemy's health and attack level by 1", values: [1, 1.5, 2, 2.5] },
     "Black Hole Digestor": { icon: "black_hole_digestor.webp", description: "Temporarily get :val% extra coins / kill bonus for each free upgrade you get on the current wave. Free upgrades can not increase tower range", values: [3, 5, 7, 10] },
     "Project Funding": { icon: "project_funding.png", description: "Tower damage is multiplied by :val% of the number of digits in your current cash", values: [12.5, 25, 50, 100] },

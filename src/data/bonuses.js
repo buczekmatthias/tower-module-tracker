@@ -285,15 +285,15 @@ const bonuses = {
     },
     "Poison swamp - Damage": {
       s: "+:valx",
-      v: [0.5, 0.8, 1.5, 4, 10, 20],
+      v: [8, 15, 25, 50, 100, 250],
     },
     "Poison swamp - Duration": {
       s: "+:vals",
-      v: [null, null, null, 5, 10, 13],
+      v: [null, null, null, 2, 5, 10],
     },
-    "Poison swamp - Chance": {
-      s: "+:val%",
-      v: [null, 3, 4, 8, 11, 15],
+    "Poison swamp - Cooldown": {
+      s: "-:vals",
+      v: [null, 2, 4, 6, 8, 10],
     },
     "Chain lightning - Damage": {
       s: "+:valx",
