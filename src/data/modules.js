@@ -35,7 +35,7 @@ tiers.set(12, "Ancestral 2*");
 tiers.set(10, "Ancestral 1*");
 tiers.set(8, "Ancestral");
 tiers.set(4, "Mythic+");
-tiers.set(2, "Epic+");
+tiers.set(2, "Legendary");
 tiers.set(1, "Epic");
 
 const loadModules = () => {

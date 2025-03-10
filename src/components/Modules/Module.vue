@@ -56,6 +56,7 @@
         class="px-3 first:pl-0 last:pr-0 text-sm"
         :class="{
           'text-module-epic': type[0].includes('Epic'),
+          'text-module-legendary': type[0].includes('Legendary'),
           'text-module-mythic': type[0].includes('Mythic'),
           'text-module-ancestral': type[0].includes('Ancestral'),
         }"
