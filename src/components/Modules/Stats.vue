@@ -35,12 +35,20 @@
         id="rare_mods"
         v-model="rare"
       />
-      <Button
-        class="border border-solid border-slate-300/30 rounded-md"
-        @click="$emit('statsUpdate', { gems_spent: gems_spent, mods: { common: common, rare: rare, epic: stats.mods.epic } })"
-      >
-        Save
-      </Button>
+      <div class="grid grid-cols-2 gap-2">
+        <Button
+          class="border border-solid border-slate-300/30 rounded-md"
+          @click="manageStats"
+        >
+          Add
+        </Button>
+        <Button
+          class="border border-solid border-slate-300/30 rounded-md"
+          @click="manageStats(false)"
+        >
+          Remove
+        </Button>
+      </div>
     </div>
   </div>
 </template>
@@ -55,11 +63,37 @@ const props = defineProps({
   stats: Object,
 });
 
-defineEmits(["statsUpdate"]);
+const emit = defineEmits(["statsUpdate"]);
 
-const gems_spent = ref(props.stats.gems_spent);
-const common = ref(props.stats.mods.common);
-const rare = ref(props.stats.mods.rare);
+const gems_spent = ref(0);
+const common = ref(0);
+const rare = ref(0);
 
 const sum = computed(() => Object.values(props.stats.mods).reduce((a, b) => a + b, 0));
+
+const manageStats = (isAddingAction = true) => {
+  const d = isAddingAction
+    ? {
+        gems_spent: props.stats.gems_spent + gems_spent.value,
+        mods: {
+          common: props.stats.mods.common + common.value,
+          rare: props.stats.mods.rare + rare.value,
+          epic: props.stats.mods.epic,
+        },
+      }
+    : {
+        gems_spent: props.stats.gems_spent - gems_spent.value,
+        mods: {
+          common: props.stats.mods.common - common.value,
+          rare: props.stats.mods.rare - rare.value,
+          epic: props.stats.mods.epic,
+        },
+      };
+
+  emit("statsUpdate", d);
+
+  gems_spent.value = 0;
+  common.value = 0;
+  rare.value = 0;
+};
 </script>
