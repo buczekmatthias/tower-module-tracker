@@ -25,6 +25,7 @@ const modules = {
     "Harmony Conductor": { icon: "harmony_conductor.webp", description: ":val% chance of poisoned enemies to miss attack. Boss chance is halved", values: [15, 20, 25, 30] },
     "Dimension Core": { icon: "dimension_core.webp", description: "Chain lightning have 60% chance of hitting the initial target. Shock chance and multiplier is doubled. If the shock is applied to the same enemy the shock multiplier will add up to a max stack of :val", values: [5, 10, 15, 20] },
     "Multiverse Nexus": { icon: "multiverse_nexus.webp", description: "Death wave, golden tower and black hole will always activate at the same time but the cooldown will be the average of those :val", values: ["+20", "+10", "+1", "-10"] },
+    "Magnetic Hook": { icon: "magnetic_hook.png", description: ":val Inner Land Mine(s) are fired at bosses as they enter tower range. 25% of elites have inner land mine(s) fired at them as they enter tower range.", values: [1, 2, 3, 4] },
   },
 };
 
@@ -80,7 +81,7 @@ const getOwnershipInfo = (moduleName) => {
 const updateStorageContent = () => {
   const stored = JSON.parse(localStorage.getItem("modules"));
 
-  ["Project Funding"].forEach((m) => {
+  ["Project Funding", "Magnetic Hook"].forEach((m) => {
     if (!Object.keys(stored).includes(m)) {
       stored[m] = 0;
     }
