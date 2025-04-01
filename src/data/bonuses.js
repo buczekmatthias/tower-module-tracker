@@ -120,7 +120,7 @@ const bonuses = {
       v: [null, null, 0.1, 0.3, 0.7, 1],
     },
     "Shockwave frequency": {
-      s: "+:vals",
+      s: "-:vals",
       v: [null, null, 1, 2, 3, 4],
     },
     "Land mine damage": {
@@ -144,7 +144,7 @@ const bonuses = {
       v: [null, null, 20, 40, 90, 120],
     },
     "Wall rebuild": {
-      s: "+:vals",
+      s: "-:vals",
       v: [null, null, 20, 40, 80, 100],
     },
   },
@@ -297,7 +297,7 @@ const bonuses = {
     },
     "Chain lightning - Damage": {
       s: "+:valx",
-      v: [8, 15, 25, 50, 100, 25],
+      v: [8, 15, 25, 50, 100, 250],
     },
     "Chain lightning - Quantity": {
       s: "+:val",
