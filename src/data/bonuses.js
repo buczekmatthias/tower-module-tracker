@@ -261,7 +261,7 @@ const bonuses = {
     },
     "Smart missiles - Damage": {
       s: "+:valx",
-      v: [8, 15, 25, 50, 100, 25],
+      v: [8, 15, 25, 50, 100, 250],
     },
     "Smart missiles - Quantity": {
       s: "+:val",
@@ -273,7 +273,7 @@ const bonuses = {
     },
     "Inner land mines - Damage": {
       s: "+:valx",
-      v: [2, 5, 15, 40, 100, 150],
+      v: [8, 15, 25, 50, 100, 250],
     },
     "Inner land mines - Quantity": {
       s: "+:val",
