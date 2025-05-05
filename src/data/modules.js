@@ -82,7 +82,7 @@ const getOwnershipInfo = (moduleName) => {
 const updateStorageContent = () => {
   const stored = JSON.parse(localStorage.getItem("modules"));
 
-  ["Project Funding", "Magnetic Hook"].forEach((m) => {
+  ["Project Funding", "Magnetic Hook", "Shrink Ray"].forEach((m) => {
     if (!Object.keys(stored).includes(m)) {
       stored[m] = 0;
     }
