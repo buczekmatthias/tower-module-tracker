@@ -6,6 +6,7 @@ const modules = {
     "Being Annihilator": { icon: "being_annihilator.webp", description: "When you super crit, your next :val hits are guaranteed super crit", values: [3, 4, 5, 6] },
     "Death Penalty": { icon: "death_penalty.webp", description: "Change of :val% to mark an enemy for death on spawn, causing the first hit to destroy it", values: [5, 8, 11, 15] },
     "Havoc Bringer": { icon: "havoc_bringer.webp", description: ":val% chance for rend armor to instantly go to max", values: [10, 13, 15, 20] },
+    "Shrink Ray": { icon: "shrink_ray.png", description: "Attacks have a 1% chance to apply a non-stacking effect that decreases the enemy's mass by :val%", values: [10, 20, 30, 40] },
   },
   armors: {
     "Anti-Cube Portal": { icon: "anti_cube_portal.webp", description: "Enemies take x:val damage for 7s after they are hit by shockwave", values: [10, 15, 20, 25] },
