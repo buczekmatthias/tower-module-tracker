@@ -13,6 +13,7 @@ const modules = {
     "Negative Mass Projector": { icon: "negative_mass_projector.webp", description: "If an orb doesn't kill the enemy it will apply a stacking debuff, reducing damage and speed by :val% per hit, to max reduction of 50%", values: [1, 1.5, 2, 2.5] },
     "Wormhole Redirector": { icon: "wormhole_redirector.webp", description: "Health regen can heal up to :val% of package max recovery", values: [25, 50, 75, 100] },
     "Space Displacer": { icon: "space_displacer.webp", description: "Landmines have a :val% chance to spawn as inner land mine (20 max) instead of normal mine. These mines autonomously move and organize around the tower", values: [15, 20, 25, 30] },
+    "Sharp Fortitude": { icon: "sharp_fortitude.png", description: "Increase the Wall's health and regen by x:val. Enemies take +1% increased damage from wall thorns per subsequent hit.", values: [1.25, 1.5, 2, 2.5] },
   },
   generators: {
     "Singularity Harness": { icon: "singularity_harness.webp", description: "Increases the range of each bot by +:valm. Enemies hit by flame bot receive double damage", values: [5, 8, 11, 15] },
@@ -82,7 +83,7 @@ const getOwnershipInfo = (moduleName) => {
 const updateStorageContent = () => {
   const stored = JSON.parse(localStorage.getItem("modules"));
 
-  ["Project Funding", "Magnetic Hook", "Shrink Ray"].forEach((m) => {
+  ["Project Funding", "Magnetic Hook", "Shrink Ray", "Sharp Fortitude"].forEach((m) => {
     if (!Object.keys(stored).includes(m)) {
       stored[m] = 0;
     }
