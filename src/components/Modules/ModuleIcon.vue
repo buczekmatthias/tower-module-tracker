@@ -12,7 +12,6 @@
       'border-4 border-solid rounded-xl flex items-center justify-center': group === 'armors',
     }"
   >
-    <!-- {{ ownership }} -->
     <template v-if="['generators', 'cores'].includes(group)">
       <div
         class="[&>*]:duration-150 h-16 w-16 relative"

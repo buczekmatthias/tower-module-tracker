@@ -8,7 +8,10 @@
       :icon="module.icon"
       :group="group"
     />
-    <p>{{ module.name }}</p>
+    <div>
+      <p>{{ module.name }}</p>
+      <p class="text-sm text-slate-400">{{ owned }} copies</p>
+    </div>
     <Icon
       icon="octicon:chevron-right-16"
       class="ml-auto group-hover:mr-2 duration-150"
