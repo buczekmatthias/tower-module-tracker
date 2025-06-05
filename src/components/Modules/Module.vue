@@ -10,7 +10,15 @@
     />
     <div>
       <p>{{ module.name }}</p>
-      <p class="text-sm text-slate-400">{{ owned }} copies</p>
+      <div class="flex divide-x divide-slate-400/20">
+        <p class="text-sm text-slate-400 pr-2">{{ owned }} copies</p>
+        <p
+          v-if="ownership[0][0].includes('Ancestral')"
+          class="text-sm pl-2 text-module-ancestral"
+        >
+          {{ ownership[0][0] }}
+        </p>
+      </div>
     </div>
     <Icon
       icon="octicon:chevron-right-16"
