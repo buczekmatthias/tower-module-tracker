@@ -13,7 +13,7 @@
       <div class="flex divide-x divide-slate-400/20">
         <p class="text-sm text-slate-400 pr-2">{{ owned }} copies</p>
         <p
-          v-if="ownership[0][0].includes('Ancestral')"
+          v-if="ownership?.[0][0].includes('Ancestral')"
           class="text-sm pl-2 text-module-ancestral"
         >
           {{ ownership[0][0] }}
