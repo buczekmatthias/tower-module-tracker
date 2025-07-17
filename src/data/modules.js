@@ -1,4 +1,7 @@
+import { bonuses } from "@/data/bonuses";
+
 const MODULES_COUNT_FOR_MAX = 18;
+const SUBSTAT_SLOTS = 8;
 
 const modules = {
   cannons: {
@@ -92,4 +95,33 @@ const updateStorageContent = () => {
   localStorage.setItem("modules", JSON.stringify(stored));
 };
 
-export { MODULES_COUNT_FOR_MAX, modules, loadModules, getOwnershipInfo, updateStorageContent };
+const getFirstEntrySubs = (type) => {
+  const list = bonuses[type];
+  const t = [];
+
+  Object.entries(list).some(([item, data]) => {
+    if (data.v[2] !== null) {
+      t.push(`${item}_${2}`);
+    }
+
+    return t.length === 2;
+  });
+
+  return [...t, ...new Array(6).fill(null)];
+};
+
+const getFirstEntryForNewPreviewItem = (type) => {
+  const module = Object.keys(modules[`${type}s`])[0];
+
+  return {
+    name: module,
+    icon: modules[`${type}s`][module].icon,
+    rank: "Ancestral",
+    subs: getFirstEntrySubs(type),
+    usedSubs: getFirstEntrySubs(type)
+      .filter((item) => item !== null)
+      .map((item) => item.split("_")[0]),
+  };
+};
+
+export { MODULES_COUNT_FOR_MAX, SUBSTAT_SLOTS, modules, loadModules, getOwnershipInfo, updateStorageContent, getFirstEntryForNewPreviewItem };

@@ -1,6 +1,6 @@
 {
   "name": "module-tracker",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
-    "@vueuse/core": "^12.7.0",
+    "@vueuse/core": "^12.8.2",
     "tailwindcss": "^4.0.9",
     "vue": "^3.5.13"
   },

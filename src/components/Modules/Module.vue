@@ -4,7 +4,7 @@
     @click="showModal = true"
   >
     <ModuleIcon
-      :ownership="ownership"
+      :ownership="ownership?.[0][0]"
       :icon="module.icon"
       :group="group"
     />
@@ -30,7 +30,7 @@
     @closeModal="showModal = false"
   >
     <ModuleIcon
-      :ownership="ownership"
+      :ownership="ownership?.[0][0]"
       :icon="module.icon"
       :group="group"
       class="scale-150 mb-4"
