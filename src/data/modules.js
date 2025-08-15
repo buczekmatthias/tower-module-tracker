@@ -26,7 +26,7 @@ const modules = {
     "Project Funding": { icon: "project_funding.png", description: "Tower damage is multiplied by :val% of the number of digits in your current cash", values: [12.5, 25, 50, 100] },
   },
   cores: {
-    "Om Chip": { icon: "om_chip.webp", description: "Spotlight will rotate to focus a boss. This effect can only happen again after :val bosses", values: [3, 2, 1, 0] },
+    "Om Chip": { icon: "om_chip.webp", description: "Spotlight will rotate to focus a boss. Boss reflects the light around it to nearby enemies, increasing by x:val the damage they receive.", values: [2, 4, 7, 15] },
     "Harmony Conductor": { icon: "harmony_conductor.webp", description: ":val% chance of poisoned enemies to miss attack. Boss chance is halved", values: [15, 20, 25, 30] },
     "Dimension Core": { icon: "dimension_core.webp", description: "Chain lightning have 60% chance of hitting the initial target. Shock chance and multiplier is doubled. If the shock is applied to the same enemy the shock multiplier will add up to a max stack of :val", values: [5, 10, 15, 20] },
     "Multiverse Nexus": { icon: "multiverse_nexus.webp", description: "Death wave, golden tower and black hole will always activate at the same time but the cooldown will be the average of those :val", values: ["+20", "+10", "+1", "-10"] },
