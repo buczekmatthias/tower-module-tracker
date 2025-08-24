@@ -44,8 +44,6 @@ onBeforeMount(() => {
     loadStatistics();
     stats.value = JSON.parse(localStorage.getItem("stats"));
   }
-
-  updateStorageContent();
 });
 
 watch(

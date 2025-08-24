@@ -10,6 +10,7 @@ const modules = {
     "Death Penalty": { icon: "death_penalty.webp", description: "Change of :val% to mark an enemy for death on spawn, causing the first hit to destroy it", values: [5, 8, 11, 15] },
     "Havoc Bringer": { icon: "havoc_bringer.webp", description: ":val% chance for rend armor to instantly go to max", values: [10, 13, 15, 20] },
     "Shrink Ray": { icon: "shrink_ray.png", description: "Attacks have a 1% chance to apply a non-stacking effect that decreases the enemy's mass by :val%", values: [10, 20, 30, 40] },
+    // "Amplifying Strike": { icon: "amplifying_strike.png", description: "Killing a boss or elite enemy increases damage from tower attacks by x:val for 5 seconds", values: [2, 0, 0, 0] },
   },
   armors: {
     "Anti-Cube Portal": { icon: "anti_cube_portal.webp", description: "Enemies take x:val damage for 7s after they are hit by shockwave", values: [10, 15, 20, 25] },
@@ -17,6 +18,7 @@ const modules = {
     "Wormhole Redirector": { icon: "wormhole_redirector.webp", description: "Health regen can heal up to :val% of package max recovery", values: [25, 50, 75, 100] },
     "Space Displacer": { icon: "space_displacer.webp", description: "Landmines have a :val% chance to spawn as inner land mine (20 max) instead of normal mine. These mines autonomously move and organize around the tower", values: [15, 20, 25, 30] },
     "Sharp Fortitude": { icon: "sharp_fortitude.png", description: "Increase the Wall's health and regen by x:val. Enemies take +1% increased damage from wall thorns per subsequent hit.", values: [1.25, 1.5, 2, 2.5] },
+    // "Orbital Augment": { icon: "orbital_augment.png", description: "Increase maximum orbs by 1. Increase rotation of all orbs by :val% for 20 seconds (120 seconds cooldown)", values: [15, 0, 0, 0] },
   },
   generators: {
     "Singularity Harness": { icon: "singularity_harness.webp", description: "Increases the range of each bot by +:valm. Enemies hit by flame bot receive double damage", values: [5, 8, 11, 15] },
@@ -24,6 +26,7 @@ const modules = {
     "Pulsar Harvester": { icon: "pulsar_harvester.webp", description: "Each time a projectile hits an enemy, there's a :val% chance that it will reduce enemy's health and attack level by 1", values: [1, 1.5, 2, 2.5] },
     "Black Hole Digestor": { icon: "black_hole_digestor.webp", description: "Temporarily get :val% extra coins / kill bonus for each free upgrade you get on the current wave. Free upgrades can not increase tower range", values: [3, 5, 7, 10] },
     "Project Funding": { icon: "project_funding.png", description: "Tower damage is multiplied by :val% of the number of digits in your current cash", values: [12.5, 25, 50, 100] },
+    // "Restorative Bonus": { icon: "restorative_bonus.png", description: "Packages grant a temporary attack speed boost for :val seconds", values: [5, 0, 0, 0] },
   },
   cores: {
     "Om Chip": { icon: "om_chip.webp", description: "Spotlight will rotate to focus a boss. Boss reflects the light around it to nearby enemies, increasing by x:val the damage they receive.", values: [2, 4, 7, 15] },
@@ -31,6 +34,7 @@ const modules = {
     "Dimension Core": { icon: "dimension_core.webp", description: "Chain lightning have 60% chance of hitting the initial target. Shock chance and multiplier is doubled. If the shock is applied to the same enemy the shock multiplier will add up to a max stack of :val", values: [5, 10, 15, 20] },
     "Multiverse Nexus": { icon: "multiverse_nexus.webp", description: "Death wave, golden tower and black hole will always activate at the same time but the cooldown will be the average of those :val", values: ["+20", "+10", "+1", "-10"] },
     "Magnetic Hook": { icon: "magnetic_hook.png", description: ":val Inner Land Mine(s) are fired at bosses as they enter tower range. 25% of elites have inner land mine(s) fired at them as they enter tower range.", values: [1, 2, 3, 4] },
+    "Primordial Collapse": { icon: "primordial_collapse.png", description: "Spawns one additional Black Hole. Damage from enemies within a Black Hole is decreased by :val%", values: [50, 55, 65, 80] },
   },
 };
 
@@ -86,7 +90,7 @@ const getOwnershipInfo = (moduleName) => {
 const updateStorageContent = () => {
   const stored = JSON.parse(localStorage.getItem("modules"));
 
-  ["Project Funding", "Magnetic Hook", "Shrink Ray", "Sharp Fortitude"].forEach((m) => {
+  ["Primordial Collapse"].forEach((m) => {
     if (!Object.keys(stored).includes(m)) {
       stored[m] = 0;
     }
